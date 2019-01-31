@@ -40,7 +40,25 @@ namespace TodoApi.Controllers {
         }
 
         // POST: api/Todo
+        /// <summary>
+        /// Create a new TodoItem if collection is empty
+        /// </summary>
+        /// <remarks>
+        /// Sample request:
+        ///
+        ///     POST /Todo
+        ///     {
+        ///        "id": 1,
+        ///        "name": "Item1",
+        ///        "isComplete": true
+        ///     } 
+        /// </remarks>
+        /// <param name="context"></param>
+        /// <response code="201">Returns the newly created item</response>
+        /// <response code="400">If the item is null</response>
         [HttpPost]
+        [ProducesResponseType(201)]
+        [ProducesResponseType(400)]
         public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem item) {
             _context.TodoItems.Add(item);
             await _context.SaveChangesAsync();
@@ -49,6 +67,12 @@ namespace TodoApi.Controllers {
         }
 
         // PUT: api/Todo/5
+        /// <summary>
+        /// This change an item.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="item"></param>
+        /// <returns></returns>
         [HttpPut("{id}")]
         public async Task<IActionResult> PutTodoItem(long id, TodoItem item) {
             if (id != item.Id) {
@@ -62,6 +86,11 @@ namespace TodoApi.Controllers {
         }
 
         // DELETE: api/Todo/5
+        /// <summary>
+        /// This deletes a todo item
+        /// </summary>
+        /// <param name="id">Id of todo item to delete</param>
+        /// <returns>OK</returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTodoItem(long id)
         {

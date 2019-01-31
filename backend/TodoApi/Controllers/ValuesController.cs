@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TodoApi.Controllers
 {
+    [Produces("application/json")] /* Til data annotation. */
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
