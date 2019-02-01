@@ -32,6 +32,7 @@ namespace TodoApi
         {
             services.AddDbContext<TodoContext>(opt =>
                 opt.UseInMemoryDatabase("TodoList"));
+                /* Adds routing. */
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // Register the Swagger generator, defining 1 or more Swagger documents
@@ -80,6 +81,8 @@ namespace TodoApi
             app.UseHttpsRedirection();
             app.UseMvc();
         } */
+        
+        // Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app) {
             // Enable middleware to serve generated Swagger as a JSON endpoint.
             app.UseSwagger();

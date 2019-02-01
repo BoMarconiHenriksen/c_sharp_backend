@@ -1,4 +1,5 @@
 # Add a controller
+Controlleren er et objekt, der håndter alle HTTP requests.  
 In the Controllers folder, create a class named TodoController.  
 
 Add this code.  
