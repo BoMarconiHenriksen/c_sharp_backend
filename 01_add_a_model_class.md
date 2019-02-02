@@ -1,5 +1,5 @@
 # Add a model class
-A model is a set of classes that represent the data that the app manages. The model for this app is a single TodoItem class.  
+En model er et sæt af klasser, der repræsenter de data som appen styrer. Modelen for denne appa er en enkel TodoItem klasse.  
 
 1. Add a folder named Models.  
 2. Add a TodoItem class to the Models folder with the following code:  
@@ -14,6 +14,6 @@ namespace TodoApi.Models
     }
 }
 ```
-The Id property functions as the unique key in a relational database.  
+Id property funktioner er en unik key i en relationel database.  
 
-Model classes can go anywhere in the project, but the Models folder is used by convention.  
+Konvention er at model klasser er i en model folder.  
